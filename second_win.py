@@ -64,6 +64,8 @@ class TestWin(QWidget):
         self.text_test1 = QLabel(txt_test1)
         self.text_test2 = QLabel(txt_test2)
         self.text_test3 = QLabel(txt_test3)
+
+        #set timer
         self.text_timer = QLabel(txt_timer)
         self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
 
@@ -71,6 +73,7 @@ class TestWin(QWidget):
         self.validator = QDoubleValidator()
         self.validator.setLocale(self.loc)
 
+        # line edit
         self.line_name = QLineEdit(txt_hintname)
 
         self.line_age = QLineEdit(txt_hintage)
@@ -92,7 +95,7 @@ class TestWin(QWidget):
         self.l_line = QVBoxLayout()
         self.r_line = QVBoxLayout()
         self.h_line = QHBoxLayout()
-        self.r_line.addWidget(self.text_timer, alignment = Qt.AlignCenter)
+        self.r_line.addWidget(self.text_timer, alignment = Qt.AlignCenter) #timer only
         self.l_line.addWidget(self.text_name, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.line_name, alignment = Qt.AlignLeft) 
         self.l_line.addWidget(self.text_age, alignment = Qt.AlignLeft)
@@ -173,6 +176,8 @@ class TestWin(QWidget):
 
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)
+
+        #timer only
         self.btn_test1.clicked.connect(self.timer_test1)
         self.btn_test2.clicked.connect(self.timer_bob)
         self.btn_test3.clicked.connect(self.timer_final)
